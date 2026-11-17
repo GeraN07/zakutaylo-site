@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Закутайло и партнёры — юридическая помощь</title>
+  <style>
+    :root {
+      --wine: #861f2b;
+      --wine-hover: #6e1823;
+      --ink: #15191b;
+      --paper: #f3f0eb;
+      --muted: #b8b8b8;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: #fff;
+      background: var(--paper);
+      font-family: var(--sans);
+    }
+
+    a { color: inherit; }
+
+    .hero {
+      position: relative;
+      min-height: 620px;
+      background: #17191a url("hero.jpg") center 43% / cover no-repeat;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(9, 12, 14, .04) 0%, rgba(9, 12, 14, .18) 42%, rgba(9, 12, 14, .78) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, .42) 0%, transparent 27%, transparent 72%, rgba(0, 0, 0, .18) 100%);
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      width: min(100% - 64px, 1440px);
+      min-height: 132px;
+      margin-inline: auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex: 0 0 410px;
+      text-decoration: none;
+    }
+
+    .brand-emblem {
+      display: grid;
+      place-items: center;
+      width: 66px;
+      height: 90px;
+      border-right: 1px solid rgba(238, 205, 151, .65);
+      color: #e6c58f;
+      font-family: var(--serif);
+      font-size: 30px;
+    }
+
+    .brand-text {
+      color: #f0dcb7;
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.16;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(16px, 2vw, 34px);
+      flex: 1;
+    }
+
+    .main-nav a {
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover { color: #e9c6a1; }
+
+    .header-cta,
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 52px;
+      padding: 0 27px;
+      border: 0;
+      background: var(--wine);
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .18s ease;
+    }
+
+    .header-cta:hover,
+    .hero-cta:hover { background: var(--wine-hover); }
+
+    .header-cta { flex: 0 0 auto; }
+    .hero {
+      background: #17191a url("img/hero.png") center 43% / cover no-repeat;
+    }
+    .hero-content {
+      display: flex;
+      justify-content: flex-end;
+      width: min(100% - 64px, 1440px);
+      margin: 0 auto;
+      padding: 35px 0 64px;
+    }
+
+    .hero-copy {
+      width: min(100%, 615px);
+      margin-right: 2.2%;
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      font-family: var(--serif);
+      font-size: clamp(42px, 4vw, 62px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -.025em;
+    }
+
+    .hero-services {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-services li {
+      display: grid;
+      grid-template-columns: 15px 1fr;
+      gap: 20px;
+      max-width: 430px;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .hero-services li::before {
+      width: 14px;
+      height: 14px;
+      margin-top: 4px;
+      border-radius: 50%;
+      background: var(--wine);
+      content: "";
+    }
+
+    .hero-cta { margin-top: 26px; }
+
+    .arrow { font-size: 20px; line-height: 1; }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(17, 21, 23, .97);
+      border-top: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      min-height: 100px;
+      padding: 18px clamp(18px, 3vw, 52px);
+      border-right: 1px solid rgba(255, 255, 255, .24);
+    }
+
+    .benefit:last-child { border-right: 0; }
+
+    .benefit-icon {
+      flex: 0 0 42px;
+      color: #eee5d7;
+      font-family: var(--serif);
+      font-size: 35px;
+      text-align: center;
+    }
+
+    .benefit-title {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .benefit-text {
+      margin: 6px 0 0;
+      color: #b7b9ba;
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 1150px) {
+      .site-header {
+        width: min(100% - 40px, 1440px);
+        flex-wrap: wrap;
+        gap: 18px;
+        padding: 20px 0;
+      }
+
+      .brand { flex-basis: 360px; }
+      .main-nav { order: 3; justify-content: flex-start; flex-basis: 100%; }
+      .hero-content { width: min(100% - 40px, 1440px); }
+      .benefit { padding-inline: 18px; gap: 14px; }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        min-height: auto;
+        background-position: 38% center;
+      }
+
+      .hero::before {
+        background: linear-gradient(90deg, rgba(8, 10, 12, .68), rgba(8, 10, 12, .78));
+      }
+
+      .site-header {
+        align-items: flex-start;
+        width: calc(100% - 36px);
+      }
+
+      .brand {
+        flex: 1 1 100%;
+        gap: 12px;
+      }
+
+      .brand-emblem {
+        width: 48px;
+        height: 65px;
+        font-size: 24px;
+      }
+
+      .brand-text { font-size: 16px; }
+      .main-nav { gap: 18px; overflow-x: auto; padding-bottom: 5px; }
+      .main-nav a { font-size: 13px; }
+      .header-cta { min-height: 44px; padding-inline: 16px; }
+
+      .hero-content {
+        width: calc(100% - 36px);
+        justify-content: flex-start;
+        padding: 44px 0 56px;
+      }
+
+      .hero-copy { margin: 0; }
+      h1 { font-size: clamp(40px, 9vw, 56px); }
+      .hero-services li { font-size: 16px; }
+
+      .benefits { grid-template-columns: repeat(2, 1fr); }
+      .benefit { min-height: 95px; }
+      .benefit:nth-child(2) { border-right: 0; }
+      .benefit:nth-child(-n+2) { border-bottom: 1px solid rgba(255, 255, 255, .2); }
+    }
+
+    @media (max-width: 420px) {
+      .header-cta { width: 100%; }
+      .main-nav { gap: 16px; }
+      .benefits { grid-template-columns: 1fr; }
+      .benefit,
+      .benefit:nth-child(2) {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+      }
+      .benefit:last-child { border-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero" aria-labelledby="hero-title">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="На главную">
+        <span class="brand-emblem" aria-hidden="true">ЗП</span>
+        <span class="brand-text">
+          ННО «Ленинградская областная<br>
+          коллегия адвокатов»<br>
+          филиал «Адвокатская контора<br>
+          „Закутайло и партнёры“»
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="#about">О коллегии</a>
+        <a href="#practice">Практики</a>
+        <a href="#lawyers">Адвокаты</a>
+        <a href="#geography">География</a>
+        <a href="#publications">Публикации</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <a class="header-cta" href="#contacts">
+        Получить консультацию <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </header>
+
+    <div class="hero-content">
+      <div class="hero-copy">
+        <h1 id="hero-title">Юридическая помощь<br>любого вида</h1>
+
+        <ul class="hero-services">
+          <li>Представление интересов<br>в органах власти, судах</li>
+          <li>Профессиональная защита<br>по уголовным делам</li>
+          <li>Консультирование<br>по правовым вопросам</li>
+        </ul>
+
+        <a class="hero-cta" href="#contacts">
+          Получить консультацию <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits" aria-label="Наши преимущества">
+    <article class="benefit">
+      <span class="benefit-icon" aria-hidden="true">⚖</span>
+      <div>
+        <h2 class="benefit-title">Комплексная<br>юридическая помощь</h2>
+        <p class="benefit-text">Гражданам и бизнесу</p>
+      </div>
+    </article>
+
+    <article class="benefit">
+      <span class="benefit-icon" aria-hidden="true">♧</span>
+      <div>
+        <h2 class="benefit-title">Профессиональная<br>защита</h2>
+        <p class="benefit-text">В судах всех инстанций</p>
+      </div>
+    </article>
+
+    <article class="benefit">
+      <span class="benefit-icon" aria-hidden="true">▤</span>
+      <div>
+        <h2 class="benefit-title">Опыт и экспертиза</h2>
+        <p class="benefit-text">В ключевых отраслях права</p>
+      </div>
+    </article>
+
+    <article class="benefit">
+      <span class="benefit-icon" aria-hidden="true">♙</span>
+      <div>
+        <h2 class="benefit-title">Индивидуальный<br>подход</h2>
+        <p class="benefit-text">К каждому доверителю</p>
+      </div>
+    </article>
+  </section>
+</body>
+</html>
